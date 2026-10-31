@@ -20,6 +20,11 @@ jobs:
         with:
           channel: stable
 
+      - name: Nettoyer le code
+        run: |
+          sed -i 's/\xE2\x80\x8E//g; s/\xE2\x80\x8F//g; s/\xEF\xBB\xBF//g' lib/main.dart
+          sed -i 's/XmlName\.parse(/XmlName.fromString(/g' lib/main.dart
+
       - name: Préparer la partie Android
         run: flutter create . --platforms=android --project-name mon_appli --org com.monappli
 
