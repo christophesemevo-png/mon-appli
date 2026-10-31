@@ -11,10 +11,8 @@ dependencies:
     sdk: flutter
   file_picker: ^8.1.2
   open_filex: ^4.5.0
-  excel: 4.0.3
-
-dependency_overrides:
   archive: ^3.6.1
+  xml: ^6.5.0
 
 flutter:
   uses-material-design: true
