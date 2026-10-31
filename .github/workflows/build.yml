@@ -26,6 +26,10 @@ jobs:
       - name: Installer les composants
         run: flutter pub get
 
+      - name: Corriger la version Android des composants
+        run: |
+          find $HOME/.pub-cache/hosted -path "*/android/build.gradle*" -exec sed -i -E 's/compileSdk(Version)?[[:space:]]*=?[[:space:]]*[0-9]+/compileSdk = 36/' {} +
+
       - name: Construire l'APK
         run: flutter build apk --release
 
